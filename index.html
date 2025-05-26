@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blossom Special School & Rehabilitation Home</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .header-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header-content p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Navigation */
+        nav {
+            background: #fff;
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+            background-color: #f8f9fa;
+        }
+
+        /* Main Content */
+        main {
+            padding: 2rem 0;
+        }
+
+        .section {
+            background: white;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-2px);
+        }
+
+        .section h2 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+
+        .section h3 {
+            color: #764ba2;
+            margin: 1.5rem 0 1rem 0;
+            font-size: 1.5rem;
+        }
+
+        /* Enhanced Image Styling */
+        .image-container {
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.2);
+        }
+
+        .image-large {
+            width: 100%;
+            max-width: 800px;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .image-medium {
+            width: 100%;
+            max-width: 600px;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .image-small {
+            width: 100%;
+            max-width: 400px;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        /* Image Grid */
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .image-grid .image-container {
+            margin: 0;
+        }
+
+        .image-grid img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        /* Two Column Image Layout */
+        .image-two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .image-two-col .image-container {
+            margin: 0;
+        }
+
+        .image-two-col img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        /* Lists */
+        .benefits-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .benefits-list li {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 5px;
+            border-left: 4px solid #667eea;
+            list-style: none;
+        }
+
+        /* Case Studies */
+        .case-study {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+        }
+
+        .case-study h4 {
+            color: #d63384;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        /* Achievements */
+        .achievement {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            color: white;
+            border-bottom-color: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-card {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Image Caption */
+        .image-caption {
+            font-size: 0.9rem;
+            color: #666;
+            font-style: italic;
+            margin-top: 0.5rem;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .section {
+                padding: 1rem;
+            }
+
+            .image-two-col {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .image-large,
+            .image-medium {
+                height: 250px;
+            }
+
+            .image-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1>Blossom Special School & Rehabilitation Home</h1>
+                <p>Nurturing Every Child's Potential with Specialized Care and Education</p>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="#special-education">Special Education</a></li>
+                <li><a href="#daily-living">Daily Living Skills</a></li>
+                <li><a href="#therapies">Therapies</a></li>
+                <li><a href="#activities">Activities</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <!-- Special Education Section -->
+            <section id="special-education" class="section">
+                <h2>Special Education</h2>
+                <div class="image-container">
+                    <img src="images/62.jpg" alt="Students in classroom setting" class="image-large">
+                    <div class="image-caption">Students engaged in classroom learning activities</div>
+                </div>
+                <p>Special education is the practice of educating students in a way that accommodates their individual differences, disabilities, and special needs. It aims to provide adapted education for disabled students, such as those with learning disabilities and learning difficulties.</p>
+                
+                <h3>In Our School:</h3>
+                <p>When a child enters our school, we first observe the child for about two weeks. During this observation period, we assess the child's:</p>
+                <ul class="benefits-list">
+                    <li>Gross motor activities</li>
+                    <li>Fine motor activities</li>
+                    <li>Mealtime activities</li>
+                    <li>Dressing and grooming</li>
+                    <li>Toilet activities</li>
+                    <li>Behavior patterns</li>
+                    <li>Speech development</li>
+                    <li>Academic skills (reading and writing)</li>
+                </ul>
+                <p>After assessment, we write a detailed case study and conduct parent meetings. We set goals based on the MDPS scale and work systematically towards achieving them.</p>
+
+                <div class="image-container">
+                    <img src="images/65.jpg" alt="Assessment activities" class="image-medium">
+                    <div class="image-caption">Assessment and evaluation activities</div>
+                </div>
+
+                <h3>Individual Educational Program (IEP)</h3>
+                <p>When a student with unique needs requires extra support to be successful at school, an individualized education program is created. An IEP can be written for a student with ADHD to outline specific teaching and learning strategies that will be effective in the classroom. The IEP is shared with parents and regularly reviewed and updated as necessary.</p>
+            </section>
+
+            <!-- Activities of Daily Living Section -->
+            <section id="daily-living" class="section">
+                <h2>Activities of Daily Living (ADL)</h2>
+                <div class="image-container">
+                    <img src="images/48.jpg" alt="Daily living activities" class="image-large">
+                    <div class="image-caption">Students practicing daily living skills</div>
+                </div>
+                <p>ADL refers to people's daily self-care activities. Common ADL includes feeding oneself, bathing, dressing, grooming, work, homemaking, cleaning oneself after urinating and defecating, and leisure. These activities are the skills and habits necessary for independent and social development.</p>
+
+                <h3>Five Basic Activities Include:</h3>
+                <ul class="benefits-list">
+                    <li>Personal hygiene</li>
+                    <li>Dressing</li>
+                    <li>Toileting</li>
+                    <li>Transferring</li>
+                    <li>Eating</li>
+                </ul>
+
+                <div class="image-two-col">
+                    <div class="image-container">
+                        <img src="file:///D:/Donation/46.jpg" alt="Daily living skills practice" class="image-small">
+                        <div class="image-caption">Practicing self-care skills</div>
+                    </div>
+                    <div class="image-container">
+                        <img src="file:///D:/Donation/66.jpg" alt="Kitchen activities" class="image-small">
+                        <div class="image-caption">Kitchen and cooking activities</div>
+                    </div>
+                </div>
+
+                <h3>Daily Living Skills:</h3>
+                <ul class="benefits-list">
+                    <li>Sweep and use a dust pan</li>
+                    <li>Wash windows</li>
+                    <li>Make the bed</li>
+                    <li>Fold laundry</li>
+                    <li>Water plants</li>
+                </ul>
+
+                <h3>Kitchen Skills:</h3>
+                <ul class="benefits-list">
+                    <li>Snack/meal/tea preparation</li>
+                    <li>Make a grocery list</li>
+                    <li>Wash/dry dishes</li>
+                    <li>Table cleaning</li>
+                </ul>
+
+                <h3>Kids Should Participate:</h3>
+                <ul class="benefits-list">
+                    <li>Practice using tools (hammer, screwdrivers)</li>
+                    <li>Sort coins and count money</li>
+                    <li>Practice time management</li>
+                    <li>Practice answering the phone</li>
+                    <li>Know personal safety information</li>
+                </ul>
+            </section>
+
+            <!-- Behavior Modification Section -->
+            <section class="section">
+                <h2>Behavior Modification</h2>
+                <div class="image-container">
+                    <img src="file:///D:/Donation/17.jpg" alt="Behavior modification activities" class="image-medium">
+                    <div class="image-caption">Behavior modification and social skills training</div>
+                </div>
+                <p>Behavior means how a person behaves in a particular situation or condition. In our school, we are shaping the behavior of every child. Usually, special children have many behavioral problems. Special needs students need structure and having clear expectations, goals, and procedures for every student in the classroom can prevent behavior problems before they begin.</p>
+                <p>We provide personal space in our classroom, minimize stimulating visuals, ensure clear walking pathways, address acoustic issues, and eliminate background noise. Handling hyperactive children is very challenging for us. We help them sit quietly, listen attentively, and wait their turn during discussions.</p>
+            </section>
+
+            <!-- Therapies Section -->
+            <section id="therapies" class="section">
+                <h2>Speech Therapy</h2>
+                <div class="image-container">
+                    <img src="file:///D:/Donation/63.jpg" alt="Speech therapy session" class="image-large">
+                    <div class="image-caption">Individual speech therapy session</div>
+                </div>
+                <p>Speech therapy assesses and treats communication problems and speech disorders. It improves students' ability to talk and use other language skills, as well as improve skills like memory and problem-solving ability.</p>
+
+                <h3>Our Approach Includes:</h3>
+                <ul class="benefits-list">
+                    <li><strong>Interaction:</strong> Through talking, playing, and using pictures, flash cards, books</li>
+                    <li><strong>Model Correct Sounds:</strong> Teaching how to make certain sounds and syllables correctly</li>
+                    <li><strong>Homework Strategy:</strong> Providing strategies for home practice</li>
+                    <li><strong>Training:</strong> Swallowing, sucking, blowing exercises</li>
+                    <li><strong>Conversation:</strong> To improve social communication</li>
+                    <li><strong>Exercises:</strong> Breathing for resonance, oral muscle strengthening</li>
+                </ul>
+
+                <h2>Physiotherapy</h2>
+                <div class="image-container">
+                    <img src="file:///D:/Donation/15.jpg" alt="Physiotherapy session" class="image-medium">
+                    <div class="image-caption">Physiotherapy and movement exercises</div>
+                </div>
+                <p>It helps assess, treat, and prevent a wide range of health conditions and movement disorders. Physiotherapists work with people of all ages who need support to improve their strength, movement, and flexibility so they can achieve their goals.</p>
+
+                <h3>Therapeutic and Preventive:</h3>
+                <p>The child's progress of growth, range of movements of joints, strength and flexibility of muscles, range of functional abilities such as coordination and development of physical skills are monitored by our therapist.</p>
+
+                <div class="case-study">
+                    <h4>Case Study of Student (Harini):</h4>
+                    <div class="image-container">
+                        <img src="file:///D:/Donation/6.jpg" alt="Harini before treatment" class="image-small">
+                        <div class="image-caption">Harini's initial assessment</div>
+                    </div>
+                    <p><strong>Before:</strong> When Harini entered our school in 2019, she couldn't walk properly, was crying always, had poor toilet training, poor eating habits, very poor social behavior, no speech, and no initiative in reading or writing. She couldn't climb stairs.</p>
+                    
+                    <div class="image-grid">
+                        <div class="image-container">
+                            <img src="file:///D:/Donation/21.jpg" alt="Harini's improvement">
+                            <div class="image-caption">Harini's physical development</div>
+                        </div>
+                        <div class="image-container">
+                            <img src="file:///D:/Donation/68.jpg" alt="Harini activities">
+                            <div class="image-caption">Harini in learning activities</div>
+                        </div>
+                        <div class="image-container">
+                            <img src="file:///D:/Donation/67.jpg" alt="Harini progress">
+                            <div class="image-caption">Harini's remarkable progress</div>
+                        </div>
+                    </div>
+                    
+                    <p><strong>Improvement:</strong> Now she walks independently with good posture and has good spinal strength. She is jumping on trampoline without support, has good urine control, improved a lot in social behavior, speaks many words, starts scribbling on slate, and climbs up and down stairs by herself.</p>
+                </div>
+
+                <h2>Occupational Therapy</h2>
+                <div class="image-two-col">
+                    <div class="image-container">
+                        <img src="file:///D:/Donation/2.jpg" alt="Occupational therapy">
+                        <div class="image-caption">Occupational therapy session</div>
+                    </div>
+                    <div class="image-container">
+                        <img src="file:///D:/Donation/3.jpg" alt="OT activities">
+                        <div class="image-caption">Fine motor skill development</div>
+                    </div>
+                </div>
+                <p>OT helps people of all ages who have physical, sensory, or cognitive problems and helps them regain independence in all areas of their lives.</p>
+
+                <h3>Benefits Include:</h3>
+                <ul class="benefits-list">
+                    <li>Develop fine motor skills for grasping and handwriting</li>
+                    <li>Improve eye-hand coordination</li>
+                    <li>Master basic life skills (bathing, dressing, brushing teeth)</li>
+                    <li>Learn positive behaviors and social skills</li>
+                    <li>Get special equipment for independence</li>
+                </ul>
+
+                <h2>Sensory Integration Therapy</h2>
+                <div class="image-container">
+                    <img src="file:///D:/Donation/10.jpg" alt="Sensory integration" class="image-large">
+                    <div class="image-caption">Sensory integration therapy equipment</div>
+                </div>
+                <p>It describes processes in the brain that allow us to take information from our 5 senses, organize it, and respond appropriately. We also have vestibular sense (balance) and proprioceptive sense that helps us know what we do with our joints, muscles, and ligaments.</p>
+                <p>Therapy sessions are play-oriented and include equipment such as swings, trampolines, and slides. These therapies can help calm an anxious child.</p>
+            </section>
+
+            <!-- Activities Section -->
+            <section id="activities" class="section">
+                <h2>Brain Gym Activity</h2>
+                <div class="image-container">
+                    <img src="file:///D:/Donation/24.jpg" alt="Brain gym activities" class="image-medium">
+                    <div class="image-caption">Brain gym coordination exercises</div>
+                </div>
+                <p>Physical movement can stimulate brain activity and help students remain focused on academics. By doing coordinated hand-leg movements which stimulate both sides of the brain, children become very active for the next session of reading and writing.</p>
+
+                <h2>Pre-Vocational Education</h2>
+                <div class="image-container">
+                    <img src="file:///D:/Donation/13.jpg" alt="Pre-vocational education" class="image-medium">
+                    <div class="image-caption">Pre-vocational skill development</div>
+                </div>
+                <p>It is designed to introduce students to the world of work and prepare them for entry into vocational or technical education programs. It helps develop independent thinking, responsibility, and problem-solving opportunities.</p>
+
+                <h2>Yoga</h2>
+                <div class="image-container">
+                    <img src="file:///D:/Donation/11.jpg" alt="Yoga session" class="image-large">
+                    <div class="image-caption">Group yoga and meditation session</div>
+                </div>
+                <p>It increases focus and concentration while decreasing stress and anxiety. It also allows children to develop body awareness and truly understand their body.</p>
+
+                <h3>Benefits of Yoga:</h3>
+                <ul class="benefits-list">
+                    <li>Increases balance and coordination</li>
+                    <li>Promotes self-confidence</li>
+                    <li>Improves quality of sleep</li>
+                    <li>Enhances imagination and creativity</li>
+                    <li>Improves attention span and memory</li>
+                    <li>Reduces ADHD core symptoms</li>
+                    <li>Increases body flexibility and strength</li>
+                    <li>Supports balance and coordination for ASD children</li>
+                </ul>
+
+                <div class="image-two-col">
+                    <div class="image-container">
+                        <img src="file:///D:/Donation/23.jpg" alt="Yoga practice">
+                        <div class="image-caption">Individual yoga practice</div>
+                    </div>
+                    <div class="image-container">
+                        <img src="file:///D:/Donation/14.jpg" alt="Students in yoga">
+                        <div class="image-caption">Students practicing yoga poses</div>
+                    </div>
+                </div>
+
+                <div class="case-study">
+                    <h4>Case Study of Student (Niyaz Abdul Salam):</h4>
+                    <div class="image-container">
+                        <img src="file:///D:/Donation/43.jpg" alt="Niyaz progress" class="image-small">
+                        <div class="image-caption">Niyaz's learning progress</div>
+                    </div>
+                    <p><strong>Before:</strong> Niyaz entered our school in 2019. Initially, he refused entry, was very poor in toilet training, had poor eating habits (liked only particular foods), and was non-cooperative in reading and speaking.</p>
+                    <p><strong>Improvement:</strong> Now he likes to come to school every day with full interest. He does his needs by himself, writes on slate from A to Z and numbers 1 to 10, matches puzzles, colors pictures by himself, and speaks many words with understanding.</p>
+                </div>
+
+                <h2>Sports</h2>
+                <div class="image-container">
+                    <img src="file:///D:/Donation/30.jpg" alt="Sports activities" class="image-large">
+                    <div class="image-caption">Students participating in sports activities</div>
+                </div>
+                <p>Children with special needs are sometimes not encouraged to exercise, but physical activity is as important for them as any child. Participating in sports can help boost self-confidence, improve relationship building skills, and help manage weight.</p>
+
+                <h3>Benefits of Sports:</h3>
+                <ul class="benefits-list">
+                    <li>Better overall fitness</li>
+                    <li>Improved cognitive health</li>
+                    <li>Better control of weight</li>
+                    <li>Healthier bone density</li>
+                    <li>Better emotional and psychological health</li>
+                    <li>Improved social skills</li>
+                    <li>Improved motor skills</li>
+                    <li>Reduced risk of diseases</li>
+                </ul>
+
+                <h3>Types of Sports in Our School:</h3>
+                <ul class="benefits-list">
+                    <li>Running</li>
+                    <li>Jumping</li>
+                    <li>Throw ball</li>
+                    <li>Soft ball throwing</li>
+                </ul>
+
+                <div class="achievement">
+                    <h3>Running Competition Achievement</h3>
+                    <div class="image-container">
+                        <img src="file:///D:/Donation/32.jpg" alt="Pandimeena with trophy" class="image-medium">
+                        <div class="image-caption">Pandimeena with Chief Minister Trophy 2023</div>
+                    </div>
+                    <p>One of our students, Pandimeena, won second prize in running and received the CHIEF MINISTER TROPHY 2023 at district level. She got a cash prize and silver medal. She is the best inspiration for all special needs children.</p>
+                </div>
+
+                <div class="image-two-col">
+                    <div class="image-container">
+                        <img src="file:///D:/Donation/25.jpg" alt="Sports day">
+                        <div class="image-caption">Annual sports day celebration</div>
+                    </div>
+                    <div class="image-container">
+                        <img src="file:///D:/Donation/59.jpg" alt="Athletic activities">
+                        <div class="image-caption">Athletic training and activities</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Meetings and Communication -->
+            <section class="section">
+                <h2>Staff Meeting</h2>
+                <p>In staff meetings, school members including teachers, physiotherapists, principal, and administrative assistants assemble to discuss the educational progress of every student individually. The main aim is to exchange opinions, ideas, and feedback towards student outcomes for smooth school functioning.</p>
+
+                <h2>Parent-Teacher Meeting</h2>
+                <div class="image-container">
+                    <img src="file:///D:/Donation/31.jpg" alt="Parent-teacher meeting" class="image-medium">
+                    <div class="image-caption">Parent-teacher interaction and communication</div>
+                </div>
+                <p>It is important for the school to regularly communicate a student's progress to their parents. For children with ADHD, communication about behavior and academic performance may need to be more frequent. Parents should inform the school of changes in medication or behavior at home. To maintain consistency between home and school, teachers and parents discuss strategies, incentive programs, and consequences.</p>
+            </section>
+
+            <!-- Achievements Section -->
+            <section id="achievements" class="section">
+                <h2>Achievements of Blossom Special School</h2>
+                
+                <div class="achievement">
+                    <h3>Pudukkottai District Collector Visiting Our Special School</h3>
+                    <div class="image-container">
+                        <img src="file:///D:/Donation/38.jpg" alt="District Collector visit" class="image-large">
+                        <div class="image-caption">District Collector's official visit to our school</div>
+                    </div>
+                </div>
+
+                <div class="achievement">
+                    <h3>Best Special School in Pudukkottai District Award</h3>
+                    <div class="image-container">
+                        <img src="file:///D:/Donation/33.jpg" alt="Award ceremony" class="image-medium">
+                        <div class="image-caption">Receiving the Best Special School Award</div>
+                    </div>
+                </div>
+
+                <h2>Celebrations</h2>
+                <div class="image-grid">
+                    <div class="image-container">
+                        <img src="file:///D:/Donation/41.jpg" alt="Pongal celebration">
+                        <div class="image-caption">Pongal festival celebration</div>
+                    </div>
+                    <div class="image-container">
+                        <img src="file:///D:/Donation/64.jpg" alt="Independence Day">
+                        <div class="image-caption">Independence Day celebration</div>
+                    </div>
+                    <div class="image-container">
+                        <img src="file:///D:/Donation/35.jpg" alt="Disabled day celebration">
+                        <div class="image-caption">International Day of Persons with Disabilities</div>
+                    </div>
+                    <div class="image-container">
+                        <img src="file:///D:/Donation/55.jpg" alt="School celebration">
+                        <div class="image-caption">Special school event celebration</div>
+                    </div>
+                    <div class="image-container">
+                        <img src="file:///D:/Donation/42.jpg" alt="Festival celebration">
+                        <div class="image-caption">Cultural festival celebration</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="contact-section section">
+                <h2>Contact Us</h2>
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <h3>Address</h3>
+                        <p>BLOSSOM SPECIAL SCHOOL AND REHABILITATION HOME</p>
+                        <p>No: 27 Ezhil Nagar, Collector Office Post</p>
+                        <p>Pudukkottai District, Tamil Nadu, India</p>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <h3>Contact Numbers</h3>
+                        <p>📞 9787542508</p>
+                        <p>📞 9443603874</p>
+                        <p>💳 GPay: 8610186375</p>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <h3>Donation Details</h3>
+                        <p><strong>Account Name:</strong> WORD</p>
+                        <p><strong>Bank:</strong> Canara Bank</p>
+                        <p><strong>Branch:</strong> Venkitakulam</p>
+                        <p><strong>Account Number:</strong> 1772101003534</p>
+                        <p><strong>IFSC Code:</strong> CNRB0001772</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Blossom Special School & Rehabilitation Home. All rights reserved.</p>
+            <p>Dedicated to nurturing every child's potential with love, care, and specialized education.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to sections
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+
+        // Add click effects to cards
+        document.querySelectorAll('.benefits-list li, .contact-card').forEach(card => {
+            card.addEventListener('click', function() {
+                this.style.transform = 'scale(1.02)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 150);
+            });
+        });
+    </script>
+</body>
+</html>
